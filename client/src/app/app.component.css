@@ -1,8 +1,15 @@
-video {
+.intro video {
   left: 50%;
-    max-width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+#download video {
+  left: 50%;
+  max-width: 100%;
+  position: sticky;
+  top: 50%;
+  z-index: 0;
 }
