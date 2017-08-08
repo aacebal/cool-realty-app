@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { routes } from './app.routing';
+import { RouterModule } from "@angular/router";
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
@@ -16,6 +20,9 @@ import { SigninComponent } from './signin/signin.component';
     AppComponent,
     SignupComponent,
     SigninComponent,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
   ],
   imports: [
     BrowserModule,
