@@ -1,7 +1,20 @@
-<form>
-  <input placeholder="Username" type="text" [(ngModel)]="formInfo.username" name="loginUsername"/>
-  <br>
-  <input placeholder="Password" type="password" [(ngModel)]="formInfo.password" name="loginPassword"/>
-  <br>
-  <button class="btn btn-lg"(click)="login(); false"> Login </button>
-</form>
+
+<section id="download" class="content-section text-center">
+  <video poster="../assets/img/beach-zoom-out.png" id="bgvid" playsinline autoplay muted loop>
+  <source src="../assets/img/beach-zoom-out.m4v" type="video/mp4">
+  </video>
+    <div id="signup" class="download-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+              <form>
+                <input placeholder="Username" type="text" [(ngModel)]="formInfo.username" name="loginUsername"/>
+                <br>
+                <input placeholder="Password" type="password" [(ngModel)]="formInfo.password" name="loginPassword"/>
+                <br>
+                <button class="btn btn-lg"(click)="login(); false"> Login </button>
+              </form>
+
+            </div>
+        </div>
+    </div>
+</section>
