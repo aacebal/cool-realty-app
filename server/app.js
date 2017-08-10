@@ -8,9 +8,9 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost/server');
+mongoose.connect(process.env.MONGODB_URI);
 
-const app = express();
+const app          = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +30,8 @@ app.use(layouts);
 
 const index = require('./routes/index');
 app.use('/', index);
+const authRoutes = require('./routes/auth-routes');
+app.use('/', authRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
