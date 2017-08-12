@@ -8,7 +8,7 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/rate-my-realty');
 
 const app          = express();
 

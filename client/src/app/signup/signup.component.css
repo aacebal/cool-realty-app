@@ -1,4 +1,6 @@
-
+form {
+  color: black;
+}
 #download video {
   left: 50%;
   max-width: 100%;
