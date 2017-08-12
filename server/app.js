@@ -6,6 +6,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const cors          = require('cors');
+const session       = require('express-session');
+const passport      = require('passport');
+const passportSetup = require('./config/passport');
+const request       = require('request');
 
 
 mongoose.connect('mongodb://localhost/rate-my-realty');

@@ -10,24 +10,24 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  constructor ( private session: SessionService, private router: Router ) { }
+constructor ( private session: SessionService, private router: Router ) { }
 
-  user: User;
-  formInfo = {
-    username: '',
-    password: ''
-  };
+user: User;
+formInfo = {
+  username: '',
+  password: ''
+};
 
-  errorMessage: string;
-  isLoggedIn: boolean = false
+errorMessage: string;
+isLoggedIn: boolean = false
 
-  ngOnInit() {
-    this.session.loggedIn$.subscribe((userFromApi) => {
-      this.isLoggedIn = true;
-    })
-  }
+ngOnInit() {
+  this.session.loggedIn$.subscribe((userFromApi) => {
+    this.isLoggedIn = true;
+  })
+}
 
-  login() {
+login() {
   this.session.login(this.formInfo)
     .then((userFromApi) => {
       this.router.navigate(['/search']);
