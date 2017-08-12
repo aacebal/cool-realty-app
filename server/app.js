@@ -13,7 +13,7 @@ const passportSetup = require('./config/passport');
 const request       = require('request');
 
 
-mongoose.connect('mongodb://localhost/rate-my-realty');
+mongoose.connect('mongodb://localhost/mymiami');
 
 const app          = express();
 
@@ -32,6 +32,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session({
+  secret: 'my miami app',
+  saveUninitialized: true,
+  resave: true,
+  cookie: { httpOnly: true, maxAge: 2419200000 }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:4200']
+}));
 
 const index = require('./routes/index');
 app.use('/', index);
