@@ -5,6 +5,8 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { SessionService } from './services/session.service';
+
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SignupComponent } from './signup/signup.component';
@@ -23,7 +25,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

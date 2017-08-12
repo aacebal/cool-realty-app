@@ -42,7 +42,30 @@ export class SessionService {
   )
   .toPromise()
   .then(res => res.json());
+  }
 
+  signup(user) {
+    return this.http.post(`${this.BASE_URL}/api/signup`, user,
+    { withCredentials: true }
+  )
+      .toPromise()
+      .then(res => res.json());
+  }
+
+  login(user) {
+    return this.http.post(`${this.BASE_URL}/api/login`, user,
+    { withCredentials: true}
+  )
+    .toPromise()
+    .then(res => res.json())
+  }
+
+  logout() {
+    return this.http.post(`${this.BASE_URL}/api/logout`, {},
+    { withCredentials: true}
+  )
+    .toPromise()
+    .then(res => res.json())
   }
 
 }
