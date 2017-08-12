@@ -9,7 +9,12 @@ import { SessionService } from '../services/session.service';
 })
 export class LoginComponent implements OnInit {
 
+  constructor ( private session: SessionService ) { }
+
   ngOnInit() {
+    this.session.loggedIn$.subscribe((userFromApi) => {
+      this.isLoggedIn = true;
+    })
   }
 
   user: User;

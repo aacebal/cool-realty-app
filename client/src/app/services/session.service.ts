@@ -12,6 +12,37 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class SessionService {
 
-  constructor() { }
+  BASE_URL: string = 'http://localhost:3000'
+
+  private loggedInSource = new Subject<User>();
+
+  loggedIn$ = this.loggedInSource.asObservable();
+
+  constructor( private http: Http ) { }
+
+  handleError(e) {
+    return Observable.throw(e.json().message);
+  }
+
+  getUser(): Observable<any> {
+    return this.loggedInSource.asObservable();
+  }
+
+  sendUser(user: User) {
+    return this.loggedInSource.next(user);
+  }
+
+  loggedIn(userInfo) {
+    this.loggedInSource.next(userInfo);
+  }
+
+  isLoggedIn() {
+    return this.http.get(`${this.BASE_URL}/api/loggedin`,
+    { withCredentials: true }
+  )
+  .toPromise()
+  .then(res => res.json());
+
+  }
 
 }
