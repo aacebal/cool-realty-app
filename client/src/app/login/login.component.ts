@@ -30,12 +30,11 @@ ngOnInit() {
 login() {
   this.session.login(this.formInfo)
     .then((userFromApi) => {
-      this.router.navigate(['/search']);
       this.session.loggedIn(userFromApi);
     })
     .catch((errResponse) => {
-        const apiInfo = errResponse.json();
-        this.errorMessage = apiInfo.message;
+      const apiInfo = errResponse.json();
+      this.errorMessage = apiInfo.message;
     });
 }
 

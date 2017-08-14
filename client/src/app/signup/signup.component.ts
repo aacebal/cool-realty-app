@@ -33,7 +33,6 @@ export class SignupComponent implements OnInit {
   signup() {
   this.session.signup(this.formInfo)
     .then((userFromApi) => {
-      this.router.navigate(['/search']);
       this.session.loggedIn(userFromApi);
     })
 }

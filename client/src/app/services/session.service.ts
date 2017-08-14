@@ -40,16 +40,16 @@ export class SessionService {
     return this.http.get(`${this.BASE_URL}/api/loggedin`,
     { withCredentials: true }
   )
-  .toPromise()
-  .then(res => res.json());
+    .toPromise()
+    .then(res => res.json());
   }
 
   signup(user) {
     return this.http.post(`${this.BASE_URL}/api/signup`, user,
     { withCredentials: true }
   )
-      .toPromise()
-      .then(res => res.json());
+    .toPromise()
+    .then(res => res.json());
   }
 
   login(user) {

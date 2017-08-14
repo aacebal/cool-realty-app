@@ -12,6 +12,8 @@ const passport      = require('passport');
 const passportSetup = require('./config/passport');
 const request       = require('request');
 
+require("dotenv").config();
+
 
 mongoose.connect('mongodb://localhost/mymiami');
 
@@ -50,6 +52,8 @@ const index = require('./routes/index');
 app.use('/', index);
 const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes);
+
+passportSetup(passport);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
