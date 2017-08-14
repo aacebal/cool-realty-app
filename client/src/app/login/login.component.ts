@@ -30,6 +30,7 @@ ngOnInit() {
 login() {
   this.session.login(this.formInfo)
     .then((userFromApi) => {
+      console.log(userFromApi);
       this.session.loggedIn(userFromApi);
     })
     .catch((errResponse) => {

@@ -69,6 +69,7 @@ authRoutes.post('/api/login', (req, res, next) => {
         res.status(500).json({ message: 'Something went wrong' });
         return;
       }
+      console.log(req.user);
 
       // We are now logged in (notice req.user)
       res.status(200).json(req.user);
