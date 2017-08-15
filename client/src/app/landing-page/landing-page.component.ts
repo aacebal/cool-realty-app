@@ -14,13 +14,46 @@ export class LandingPageComponent implements OnInit {
 
   user: User;
   errorMessage: string;
-  isLoggedIn: boolean = false
+  isLoggedIn: boolean = false;
+  loginInfo = {
+    username: '',
+    password: ''
+  };
+  signupInfo = {
+    name: '',
+    lastName: '',
+    username: '',
+    password: ''
+  };
+  loginReady: boolean = false;
+  signupReady: boolean = false;
 
-  constructor( private session: SessionService ) { }
+  constructor( private session: SessionService, private router: Router ) { }
 
   ngOnInit() {
     this.session.loggedIn$.subscribe((userFromApi) => {
     this.isLoggedIn = true;
+  })
+}
+
+login() {
+  this.session.login(this.loginInfo)
+    .then((userFromApi) => {
+      console.log(userFromApi);
+      this.session.loggedIn(userFromApi);
+      this.router.navigate(['/miami']);
+    })
+    .catch((errResponse) => {
+      const apiInfo = errResponse.json();
+      this.errorMessage = apiInfo.message;
+    });
+}
+
+signup() {
+this.session.signup(this.signupInfo)
+  .then((userFromApi) => {
+    this.session.loggedIn(userFromApi);
+    this.router.navigate(['/miami']);
   })
 }
 

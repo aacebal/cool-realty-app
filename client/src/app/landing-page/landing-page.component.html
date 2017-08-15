@@ -17,6 +17,32 @@
                           <i class="fa fa-angle-double-down animated"></i>
                       </a>
                   </div>
+                  <div *ngIf="signup-active" id="signup" class="download-section">
+                      <div class="container">
+                          <div class="col-lg-8 col-lg-offset-2">
+                            <form>
+                              <input placeholder="Name" type="text" [(ngModel)]="signupInfo.name" name="name"/><br>
+                              <input placeholder="Last Name" type="text" [(ngModel)]="signupInfo.lastName" name="lastName"/><br>
+                              <input placeholder="Username" type="text" [(ngModel)]="signupInfo.username" name="username"/><br>
+                              <input placeholder="Password" type="password" [(ngModel)]="signupInfo.password" name="password"/><br>
+                              <button class="btn btn-lg"(click)="signup()"> Signup </button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+                  <div *ngIf="login-active" id="login" class="download-section">
+                      <div class="container">
+                          <div class="col-lg-8 col-lg-offset-2">
+                            <form>
+                              <input placeholder="Username" type="text" [(ngModel)]="loginInfo.username" name="loginUsername"/>
+                              <br>
+                              <input placeholder="Password" type="password" [(ngModel)]="loginInfo.password" name="loginPassword"/>
+                              <br>
+                              <button class="btn btn-lg"(click)="login(); false"> Login </button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
@@ -30,22 +56,6 @@
               <p>Rate My Realty allows users to rate realty listings to help improve the quality of pictures, descriptions and other details.</p>
               <p>Users earn points and rewards for helping others create better listings, and gain relevance in the Rate My Realty community to be helped with their listing as well.</p>
               <p>Connect with users from all over the web to share tips on how to advertise your property, and create a platform for a world of better listings.</p>
-          </div>
-      </div>
-  </section>
-
-  <!-- Download Section -->
-  <section id="download" class="content-section text-center">
-    <video poster="../assets/img/beach-zoom-out.png" id="bgvid" playsinline autoplay muted loop>
-    <source src="../assets/img/beach-zoom-out.m4v" type="video/mp4">
-    </video>
-      <div id="signup" class="signup-section">
-          <div class="container">
-              <div class="col-lg-8 col-lg-offset-2">
-                  <h2>Signup to Rate My Realty</h2>
-                  <p>Signup to start rating listings and earning rewards</p>
-                  <a href="signup" class="btn btn-default btn-lg">Signup</a>
-              </div>
           </div>
       </div>
   </section>
