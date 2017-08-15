@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { SessionService } from './services/session.service';
+import { YelpService } from './services/yelp.service';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -27,7 +28,7 @@ import { SelectionScreenComponent } from './selection-screen/selection-screen.co
     BrowserModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [SessionService],
+  providers: [SessionService, YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
