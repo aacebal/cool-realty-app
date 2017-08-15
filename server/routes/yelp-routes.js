@@ -1,19 +1,23 @@
 const User       = require('../models/user-model');
+const express    = require('express');
 
 const yelpRoutes = express.Router();
 
-var Yelp = require('yelp');
-
-const CONSUMER_KEY = process.env.CONSUMER_KEY;
-const CONSUMER_SECRET = process.env.CONSUMER_SECRET;
-const TOKEN = process.env.TOKEN;
-const TOKEN_SECRET = process.env.TOKEN_SECRET;
+var Yelp = require('yelp-v3');
 
 var yelp = new Yelp({
-  consumer_key: `${CONSUMER_KEY}`,
-  consumer_secret: `${CONSUMER_SECRET}`,
-  token: `${TOKEN}`,
-  token_secret: `${TOKEN_SECRET}`,
+  access_token: `${process.env.TOKEN}`,
+});
+
+yelpRoutes.get('/api/search', (req, res, next) => {
+  console.log(yelp.consumer_key, yelp.consumer_secret, yelp.token);
+  yelp.search({ term: 'food', location: 'Montreal' })
+    .then(function (data) {
+      res.status(200).json(data);
+    })
+    .catch(function (err) {
+      res.status(500).json({ message: "Something went wrong" })
+    });
 });
 
 module.exports = yelpRoutes;

@@ -52,6 +52,8 @@ const index = require('./routes/index');
 app.use('/', index);
 const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes);
+const yelpRoutes = require('./routes/yelp-routes');
+app.use('/', yelpRoutes);
 
 passportSetup(passport);
 
