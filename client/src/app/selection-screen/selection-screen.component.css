@@ -5,9 +5,7 @@
 }
 
 .grid > div {
-  border: 2px solid rgb(233,171,88);
-  border-radius: 5px;
-  background-color: rgba(233,171,88,.5);
+  background-color: black;
   padding: 1em;
   color: #d9480f;
 }.grid {
@@ -18,7 +16,13 @@
 }
 .selection-menu {
   grid-area: 1 / 1 / 8 / 2;
-  background-color: green;
+  border-right: white 1px solid;
+  display: grid;
+  grid-template-rows: 75px 1fr;
+}
+.places {
+  grid-row: 2;
+  padding: 1em;
 }
 .content > div {
   border: 2px solid rgb(233,171,88);
@@ -27,11 +31,13 @@
   padding: 1em;
   color: #d9480f;
 }.content {
-  grid-area: 2 / 2 / 8 / 6;
+  grid-column: 2 / 6;
+  grid-row: 2 / 8;
+  overflow: scroll;
 }
-.places {
-  width: 20%;
-  height: 20%;
+.locations {
+  width: 22%;
+  height: 24%;
   float: left;
   margin: 10px;
 }
