@@ -1,19 +1,18 @@
 <div class="grid">
   <div class="selection-menu">
     <div class="places">
-      <h1><a (click)="getPlaces(coralgables)">Coral Gables</a></h1>
-      <h1><a (click)="getPlaces(downtown)">Downtown</a></h1>
-      <h1><a (click)="getPlaces(midtown)">Midtown</a></h1>
-      <h1><a (click)="getPlaces(wynwood)">Wynwood</a></h1>
-      <h1><a (click)="getPlaces(miamibeach)">Miami Beach</a></h1>
-      <h1><a (click)="getPlaces(keybiscayne)">Key Biscayne</a></h1>
+      <h1><a (click)="getPlaces('coralgables')">Coral Gables</a></h1>
+      <h1><a (click)="getPlaces('downtownmiami')">Downtown</a></h1>
+      <h1><a (click)="getPlaces('midtownmiami')">Midtown</a></h1>
+      <h1><a (click)="getPlaces('wynwood')">Wynwood</a></h1>
+      <h1><a (click)="getPlaces('miamibeach')">Miami Beach</a></h1>
+      <h1><a (click)="getPlaces('keybiscayne')">Key Biscayne</a></h1>
     </div>
   </div>
   <div class="content">
-    <div class="locations">
-      DIME
-    </div>
-
+      <div *ngFor="let location of locations" class="locations">
+        <img class="selection-image" src="{{location.image_url}}">
+      </div>
   </div>
 
 </div>

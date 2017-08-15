@@ -3,7 +3,7 @@ import { YelpService } from '../services/yelp.service';
 import { ActivatedRoute, Router} from '@angular/router';
 import { SessionService } from '../services/session.service';
 import { User } from '../models/user.model';
-import { Place } from '../models/place.model';
+import { Location } from '../models/Location.model';
 
 @Component({
   selector: 'app-selection-screen',
@@ -14,7 +14,7 @@ export class SelectionScreenComponent implements OnInit {
 
   errorMessage: string;
   isLoggedIn: boolean = false;
-  places: Place[];
+  locations: Location[];
 
 constructor(private yelp: YelpService, private session: SessionService, private router: Router, activeRouter: ActivatedRoute ) { }
 
@@ -25,10 +25,11 @@ ngOnInit() {
 }
 
 getPlaces(place) {
+  console.log(place);
   this.yelp.getLocations(place)
-    .then((placesFromAPI) => {
-      this.places = placesFromAPI;
-      console.log(this.places);
+    .then((locationsfromAPI) => {
+      this.locations = locationsfromAPI.businesses;
+      console.log(this.locations);
     })
 }
 
