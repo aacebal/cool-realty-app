@@ -32,6 +32,7 @@ login() {
     .then((userFromApi) => {
       console.log(userFromApi);
       this.session.loggedIn(userFromApi);
+      this.router.navigate(['/miami']);
     })
     .catch((errResponse) => {
       const apiInfo = errResponse.json();

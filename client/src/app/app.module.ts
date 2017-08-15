@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { SelectionScreenComponent } from './selection-screen/selection-screen.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
     SignupComponent,
     LoginComponent,
     LandingPageComponent,
+    SelectionScreenComponent,
   ],
   imports: [
     FormsModule,
