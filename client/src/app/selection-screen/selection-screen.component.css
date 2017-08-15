@@ -50,3 +50,6 @@
   float: left;
   margin: 10px;
 }
+a {
+  cursor: pointer;
+}

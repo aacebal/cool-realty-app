@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, Injectable } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 import { SessionService } from '../services/session.service';
-import { YelpService } from '../services/yelp.service';
+
 import { ActivatedRoute, Router} from '@angular/router';
 import { User } from '../models/user.model';
 
@@ -29,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   loginReady: boolean = false;
   signupReady: boolean = false;
 
-  constructor( private session: SessionService, private router: Router, activeRouter: ActivatedRoute, private yelp: YelpService ) { }
+  constructor( private session: SessionService, private router: Router, activeRouter: ActivatedRoute) { }
 
   ngOnInit() {
     this.session.loggedIn$.subscribe((userFromApi) => {
