@@ -30,7 +30,6 @@ ngOnInit() {
 login() {
   this.session.login(this.loginInfo)
     .then((userFromApi) => {
-      console.log(userFromApi);
       this.session.loggedIn(userFromApi);
       this.router.navigate(['/miami']);
     })

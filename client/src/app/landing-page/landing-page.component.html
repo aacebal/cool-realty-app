@@ -17,32 +17,6 @@
                           <i class="fa fa-angle-double-down animated"></i>
                       </a>
                   </div>
-                  <div *ngIf="signup-active" id="signup" class="download-section">
-                      <div class="container">
-                          <div class="col-lg-8 col-lg-offset-2">
-                            <form>
-                              <input placeholder="Name" type="text" [(ngModel)]="signupInfo.name" name="name"/><br>
-                              <input placeholder="Last Name" type="text" [(ngModel)]="signupInfo.lastName" name="lastName"/><br>
-                              <input placeholder="Username" type="text" [(ngModel)]="signupInfo.username" name="username"/><br>
-                              <input placeholder="Password" type="password" [(ngModel)]="signupInfo.password" name="password"/><br>
-                              <button class="btn btn-lg"(click)="signup()"> Signup </button>
-                            </form>
-                          </div>
-                      </div>
-                  </div>
-                  <div *ngIf="login-active" id="login" class="download-section">
-                      <div class="container">
-                          <div class="col-lg-8 col-lg-offset-2">
-                            <form>
-                              <input placeholder="Username" type="text" [(ngModel)]="loginInfo.username" name="loginUsername"/>
-                              <br>
-                              <input placeholder="Password" type="password" [(ngModel)]="loginInfo.password" name="loginPassword"/>
-                              <br>
-                              <button class="btn btn-lg"(click)="login(); false"> Login </button>
-                            </form>
-                          </div>
-                      </div>
-                  </div>
               </div>
           </div>
       </div>

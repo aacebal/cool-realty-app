@@ -4,6 +4,9 @@
 .btn-lg {
   background-color: inherit;
 }
+.btn-lg:hover {
+  color: #42DCA3;
+}
 .intro video {
   left: 50%;
   max-width: 100%;

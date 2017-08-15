@@ -29,6 +29,9 @@
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
 }
+.places a:hover {
+  color: #42DCA3;
+}
 .content > div {
   border: 2px solid rgb(233,171,88);
   border-radius: 5px;
