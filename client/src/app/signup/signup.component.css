@@ -34,3 +34,6 @@ input[type=password], select {
     font-size: 16px;
     background-color: inherit;
 }
+input:focus {
+  outline-color: #42DCA3;
+}

@@ -15,7 +15,7 @@ const request       = require('request');
 require("dotenv").config();
 
 
-mongoose.connect('mongodb://localhost/mymiami');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app          = express();
 
