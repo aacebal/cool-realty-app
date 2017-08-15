@@ -1,11 +1,36 @@
-form {
-  color: black;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
 }
-#download video {
+.btn-lg {
+  background-color: inherit;
+}
+.intro video {
   left: 50%;
   max-width: 100%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+}
+input[type=text], select {
+    width: 40%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: inherit;
+}
+input[type=password], select {
+    width: 40%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: inherit;
 }

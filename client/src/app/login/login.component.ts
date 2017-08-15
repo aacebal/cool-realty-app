@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 constructor ( private session: SessionService, private router: Router ) { }
 
 user: User;
-formInfo = {
+loginInfo = {
   username: '',
   password: ''
 };
@@ -28,7 +28,7 @@ ngOnInit() {
 }
 
 login() {
-  this.session.login(this.formInfo)
+  this.session.login(this.loginInfo)
     .then((userFromApi) => {
       console.log(userFromApi);
       this.session.loggedIn(userFromApi);

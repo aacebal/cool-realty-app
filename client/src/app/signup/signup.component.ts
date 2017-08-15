@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   constructor( private session: SessionService, private router: Router ) { }
 
     user: User;
-    formInfo = {
+    signupInfo = {
       name: '',
       lastName: '',
       username: '',
@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-  this.session.signup(this.formInfo)
+  this.session.signup(this.signupInfo)
     .then((userFromApi) => {
       this.session.loggedIn(userFromApi);
       this.router.navigate(['/miami']);

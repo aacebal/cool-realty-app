@@ -9,5 +9,7 @@ import { SelectionScreenComponent } from './selection-screen/selection-screen.co
 export const routes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'miami', component: SelectionScreenComponent},
+    { path: 'signup', component: SignupComponent},
+    { path: 'login', component: LoginComponent},
     { path: '**', redirectTo: '' }
 ];

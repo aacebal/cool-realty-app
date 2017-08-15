@@ -1,23 +1,72 @@
-<section id="download" class="content-section text-center">
-  <video poster="../assets/img/beach-background.png" id="bgvid" playsinline autoplay muted loop>
-  <source src="../assets/img/beach-background.mp4" type="video/mp4">
-  </video>
-    <div id="signup" class="download-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-              <form>
-                <input placeholder="Name" type="text" [(ngModel)]="formInfo.name" name="name"/>
-                <br>
-                <input placeholder="Last Name" type="text" [(ngModel)]="formInfo.lastName" name="lastName"/>
-                <br>
-                <input placeholder="Username" type="text" [(ngModel)]="formInfo.username" name="username"/>
-                <br>
-                <input placeholder="Password" type="password" [(ngModel)]="formInfo.password" name="password"/>
-                <br>
-                <button class="btn btn-lg"(click)="signup()"> Signup </button>
-              </form>
 
-            </div>
-        </div>
-    </div>
-</section>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Intro Header -->
+  <header class="intro">
+    <video poster="../assets/img/beach-background.png" id="bgvid" playsinline autoplay muted loop>
+    <source src="../assets/img/beach-background.mp4" type="video/mp4">
+    </video>
+      <div class="intro-body">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                      <h1 class="brand-heading"><span class="light">MY</span> MIAMI</h1>
+                      <p class="intro-text">A website to help others improve their realty listings.
+                          <br>Win rewards and trophies while improving listings quality.</p>
+
+                  </div>
+                  <div id="signup" class="download-section">
+                      <div class="container">
+                          <div class="col-lg-8 col-lg-offset-2">
+                            <form>
+                              <input placeholder="Name" type="text" [(ngModel)]="signupInfo.name" name="name"/><br>
+                              <input placeholder="Last Name" type="text" [(ngModel)]="signupInfo.lastName" name="lastName"/><br>
+                              <input placeholder="Username" type="text" [(ngModel)]="signupInfo.username" name="username"/><br>
+                              <input placeholder="Password" type="password" [(ngModel)]="signupInfo.password" name="password"/><br>
+                              <button class="btn btn-lg"(click)="signup()"> Signup </button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="container content-section text-center">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+              <h2>About Rate My Realty</h2>
+              <p>Rate My Realty allows users to rate realty listings to help improve the quality of pictures, descriptions and other details.</p>
+              <p>Users earn points and rewards for helping others create better listings, and gain relevance in the Rate My Realty community to be helped with their listing as well.</p>
+              <p>Connect with users from all over the web to share tips on how to advertise your property, and create a platform for a world of better listings.</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+      <div class="container text-center">
+          <p>Copyright &copy; Rate My Realty 2017</p>
+      </div>
+  </footer>
+
+
+  <!-- jQuery -->
+  <script src="../assets/vendor/jquery/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+  <!-- Theme JavaScript -->
+  <script src="../assets/js/grayscale.min.js"></script>
+
+  </body>

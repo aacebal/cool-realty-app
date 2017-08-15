@@ -3,7 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 import { User } from '../models/user.model';
 import { SessionService } from '../services/session.service';
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -28,13 +28,14 @@ export class LandingPageComponent implements OnInit {
   loginReady: boolean = false;
   signupReady: boolean = false;
 
-  constructor( private session: SessionService, private router: Router ) { }
+  constructor( private session: SessionService, private router: Router, activeRouter: ActivatedRoute ) { }
 
   ngOnInit() {
     this.session.loggedIn$.subscribe((userFromApi) => {
     this.isLoggedIn = true;
   })
 }
+
 
 login() {
   this.session.login(this.loginInfo)
