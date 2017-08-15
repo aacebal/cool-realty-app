@@ -3,7 +3,6 @@
   max-width: inherit;
   height:100%;
 }
-
 .grid > div {
   background-color: black;
   padding: 1em;
@@ -23,6 +22,12 @@
 .places {
   grid-row: 2;
   padding: 1em;
+  color: white;
+}
+.places a {
+  color: white;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
 }
 .content > div {
   border: 2px solid rgb(233,171,88);
