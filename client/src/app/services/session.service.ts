@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class SessionService {
 
-  BASE_URL: string = 'http://localhost:3000'
+  BASE_URL: string = environment.BASE_URL;
 
   private loggedInSource = new Subject<User>();
 

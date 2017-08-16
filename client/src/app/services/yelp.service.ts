@@ -12,10 +12,10 @@ export class YelpService {
 
   constructor( private http: Http ) { }
 
-  BASE_URL: string = 'http://localhost:3000'
+  BASE_URL: string = environment.BASE_URL;
 
   getLocations(place, sort) {
-    return this.http.get(`${this.BASE_URL}/api/search/${place}&${sort}`, 
+    return this.http.get(`${this.BASE_URL}/api/search/${place}&${sort}`,
     { withCredentials: true }
   )
     .toPromise()
