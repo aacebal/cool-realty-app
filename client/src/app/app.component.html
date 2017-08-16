@@ -4,7 +4,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                   Menu <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand page-scroll" href="#page-top">
+              <a class="navbar-brand page-scroll" [routerLink]="['#page-top']">
                   <i class="fa fa-play-circle"></i> <span class="light">MY</span> MIAMI
               </a>
           </div>
@@ -13,8 +13,8 @@
           <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
               <ul class="nav navbar-nav">
                   <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                  <li class="hidden">
-                      <a href="#page-top"></a>
+                  <li>
+                      <a [routerLink]="['/miami']">Explore Miami</a>
                   </li>
                   <li>
                       <a href="#about">About</a>
