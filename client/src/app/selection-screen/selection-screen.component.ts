@@ -16,6 +16,7 @@ export class SelectionScreenComponent implements OnInit {
   isLoggedIn: boolean = false;
   locations: Location[];
   visible: boolean = false;
+  best_match: any;
 
 constructor(private yelp: YelpService, private session: SessionService, private router: Router, activeRouter: ActivatedRoute ) { }
 
