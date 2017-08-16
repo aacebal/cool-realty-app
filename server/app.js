@@ -55,6 +55,10 @@ app.use('/', authRoutes);
 const yelpRoutes = require('./routes/yelp-routes');
 app.use('/', yelpRoutes);
 
+app.use((req, res, next) => {
+  res.sendfFile(__dirname + '/public/index.html');
+});
+
 passportSetup(passport);
 
 // catch 404 and forward to error handler
