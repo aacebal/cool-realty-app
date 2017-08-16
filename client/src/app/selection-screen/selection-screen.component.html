@@ -1,18 +1,28 @@
 <div class="grid">
   <div class="selection-menu">
     <div class="places">
-      <h1><a (click)="getPlaces('coralgables')">Coral Gables</a></h1>
-      <h1><a (click)="getPlaces('downtownmiami')">Downtown</a></h1>
-      <h1><a (click)="getPlaces('midtownmiami')">Midtown</a></h1>
-      <h1><a (click)="getPlaces('wynwood')">Wynwood</a></h1>
-      <h1><a (click)="getPlaces('miamibeach')">Miami Beach</a></h1>
-      <h1><a (click)="getPlaces('keybiscayne')">Key Biscayne</a></h1>
+      <h1><a (click)="getPlaces('coralgables', best_match)">Coral Gables</a></h1>
+      <h1><a (click)="getPlaces('downtownmiami', best_match)">Downtown</a></h1>
+      <h1><a (click)="getPlaces('midtownmiami', best_match)">Midtown</a></h1>
+      <h1><a (click)="getPlaces('wynwood', best_match)">Wynwood</a></h1>
+      <h1><a (click)="getPlaces('miamibeach', best_match)">Miami Beach</a></h1>
+      <h1><a (click)="getPlaces('keybiscayne', best_match)">Key Biscayne</a></h1>
     </div>
   </div>
-  <div class="content">
-      <div *ngFor="let location of locations" class="locations">
-        <img class="selection-image" src="{{location.image_url}}">
+
+  <div *ngIf="!locations" class="content">
+      <div class="content-section text-center">
+      <h2>About My Miami</h2>
+        <p>My Miami is designed to give easy access to everyone to Miami's top rated restaurants in the most popular destinations of the city.</p>
+        <p>Signup to rate places and recommend to your friends, connect to people on facebook to see what they are rating and join a community of food enthusiasts here in the Magic City.</p>
+        <p>Track all the places you have been, make reservations and invite friends to join you to experience the best Miami has to offer.</p>
       </div>
   </div>
 
+  <div *ngIf="locations" class="content img_wrap">
+      <div *ngFor="let location of locations" class="locations img_img">
+        <img src="{{location.image_url}}" [ngClass]="{img_hover: visible}" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="selection-image" >
+          <p [ngClass]="{img_description: visible, invisible: !visible}" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" >{{ location.name }}.</p>
+      </div>
+  </div>
 </div>

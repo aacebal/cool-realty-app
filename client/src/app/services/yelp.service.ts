@@ -14,8 +14,8 @@ export class YelpService {
 
   BASE_URL: string = 'http://localhost:3000'
 
-  getLocations(place) {
-    return this.http.get(`${this.BASE_URL}/api/search/${place}`,
+  getLocations(place, sort) {
+    return this.http.post(`${this.BASE_URL}/api/search/${place}`, sort, 
     { withCredentials: true }
   )
     .toPromise()

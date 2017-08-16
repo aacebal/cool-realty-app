@@ -15,6 +15,7 @@ export class SelectionScreenComponent implements OnInit {
   errorMessage: string;
   isLoggedIn: boolean = false;
   locations: Location[];
+  visible: boolean = false;
 
 constructor(private yelp: YelpService, private session: SessionService, private router: Router, activeRouter: ActivatedRoute ) { }
 
@@ -24,13 +25,20 @@ ngOnInit() {
   })
 }
 
-getPlaces(place) {
-  console.log(place);
-  this.yelp.getLocations(place)
+getPlaces(place, sort) {
+  this.yelp.getLocations(place, sort)
     .then((locationsfromAPI) => {
       this.locations = locationsfromAPI.businesses;
       console.log(this.locations);
     })
 }
+
+onMouseOver(): void {
+   this.visible = true;
+ }
+
+ onMouseOut(): void {
+   this.visible = false;
+ }
 
 }

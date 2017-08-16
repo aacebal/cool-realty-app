@@ -3,17 +3,17 @@ const express    = require('express');
 
 const yelpRoutes = express.Router();
 
+var request = require("request");
 var Yelp = require('yelp-v3');
 
 var yelp = new Yelp({
   access_token: `${process.env.TOKEN}`,
 });
 
-yelpRoutes.get('/api/search/:place', (req, res, next) => {
+yelpRoutes.post('/api/search/:place', (req, res, next) => {
   var place = req.params.place;
 
-  console.log(yelp.consumer_key, yelp.consumer_secret, yelp.token);
-  yelp.search({ term: 'food', location: `${place}` })
+  yelp.search({ term: 'food', location: `${place}`, limit: 50, sort_by: "rating" })
     .then(function (data) {
       res.status(200).json(data);
     })
