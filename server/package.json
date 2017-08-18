@@ -17,6 +17,8 @@
     "express": "~4.14.1",
     "express-ejs-layouts": "~2.2.0",
     "express-session": "^1.15.5",
+    "free-google-image-search": "^1.0.0",
+    "google-images": "^2.1.0",
     "layouts": "^1.0.0",
     "mongoose": "^4.8.7",
     "morgan": "~1.7.0",

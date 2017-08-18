@@ -28,9 +28,9 @@ ngOnInit() {
 
 getPlaces(place, sort) {
   this.yelp.getLocations(place, sort)
-    .then((locationsfromAPI) => {
-      this.locations = locationsfromAPI.businesses;
-      console.log(this.locations);
+    .then((locationsFromAPI) => {
+      this.locations = locationsFromAPI.businesses;
+      console.log(locationsFromAPI);
     })
 }
 

@@ -1,5 +1,8 @@
 const User       = require('../models/user-model');
 const express    = require('express');
+const GoogleImages = require('google-images');
+
+const client = new GoogleImages('CSE ID', 'API KEY');
 
 const yelpRoutes = express.Router();
 
