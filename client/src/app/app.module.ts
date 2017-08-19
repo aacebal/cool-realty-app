@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 
 import { SessionService } from './services/session.service';
 import { YelpService } from './services/yelp.service';
+import { GoogleService } from './services/google.service';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SelectionScreenComponent } from './selection-screen/selection-screen.component';
+import { SinglePlaceComponent } from './single-place/single-place.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { SelectionScreenComponent } from './selection-screen/selection-screen.co
     LoginComponent,
     LandingPageComponent,
     SelectionScreenComponent,
+    SinglePlaceComponent,
   ],
   imports: [
     FormsModule,
@@ -28,7 +31,7 @@ import { SelectionScreenComponent } from './selection-screen/selection-screen.co
     BrowserModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [SessionService, YelpService],
+  providers: [SessionService, YelpService, GoogleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
