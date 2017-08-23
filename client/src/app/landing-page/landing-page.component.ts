@@ -3,7 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 import { SessionService } from '../services/session.service';
 
-import { ActivatedRoute, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import { User } from '../models/user.model';
 
 @Component({
@@ -29,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   loginReady: boolean = false;
   signupReady: boolean = false;
 
-  constructor( private session: SessionService, private router: Router, activeRouter: ActivatedRoute) { }
+  constructor( private session: SessionService, private router: Router ) { }
 
   ngOnInit() {
     this.session.loggedIn$.subscribe((userFromApi) => {

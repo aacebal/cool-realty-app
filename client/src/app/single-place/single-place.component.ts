@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { SessionService } from '../services/session.service'
 
 @Component({
   selector: 'app-single-place',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SinglePlaceComponent implements OnInit {
 
-  constructor() { }
+  placeId: string;
+
+  constructor( private session: SessionService, private route: Router, private activeRoute: ActivatedRoute ) { }
 
   ngOnInit() {
+    this.activeRoute.params
+      .subscribe((params) => {
+        this.placeId = params['id']
+      })
   }
 
 }

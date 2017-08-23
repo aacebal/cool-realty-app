@@ -21,7 +21,7 @@
 
   <div *ngIf="locations" class="content img_wrap">
       <div *ngFor="let location of locations" class="locations img_img">
-        <img src="{{location.image_url}}" [ngClass]="{img_hover: visible}" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="selection-image" >
+        <a [routerLink]="['place', location._id]"><img src="{{location.image_url}}" [ngClass]="{img_hover: visible}" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="selection-image" ></a>
           <p [ngClass]="{img_description: visible, invisible: !visible}" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" >{{ location.name }}.</p>
       </div>
   </div>
