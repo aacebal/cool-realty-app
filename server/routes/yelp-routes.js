@@ -15,7 +15,6 @@ var yelp = new Yelp({
 
 yelpRoutes.get('/api/search/:place&:sort', (req, res, next) => {
   var sort = req.params.sort;
-  console.log(sort);
   var place = req.params.place;
 
   yelp.search({ term: 'food', location: `${place}`, limit: 50, sort_by: `${sort}` })
@@ -25,6 +24,17 @@ yelpRoutes.get('/api/search/:place&:sort', (req, res, next) => {
     .catch(function (err) {
       res.status(500).json({ message: "Something went wrong" });
     });
+});
+
+yelpRoutes.get('/api/get-info/:id', (req, res, next) => {
+  var placeId = req.params.id;
+
+  yelp.businesses(`${placeId}`, function(error, data) {
+    if (error) {
+      res.status(500).json({ message: 'Something went wrong' });
+    }
+    res.status(200).json(data);
+  });
 });
 
 module.exports = yelpRoutes;

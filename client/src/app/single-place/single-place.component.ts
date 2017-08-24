@@ -25,6 +25,7 @@ export class SinglePlaceComponent implements OnInit {
       })
     this.yelp.getInfo(this.placeId)
       .then((placeInfo) => {
+        console.log(placeInfo);
         this.placeInfo = placeInfo;
       })
   }
