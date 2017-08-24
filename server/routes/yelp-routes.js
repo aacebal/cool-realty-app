@@ -6,7 +6,15 @@ const client = new GoogleImages('CSE ID', 'API KEY');
 
 const yelpRoutes = express.Router();
 
-var request = require("request");
+let options = {
+    size: "large",
+    language: "en",
+    safe: true,
+    color: "white"
+};
+
+var fotology = require('fotology');
+var request = require('request');
 var Yelp = require('yelp-v3');
 
 var yelp = new Yelp({
