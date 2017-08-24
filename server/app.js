@@ -55,6 +55,7 @@ app.use('/', authRoutes);
 const yelpRoutes = require('./routes/yelp-routes');
 app.use('/', yelpRoutes);
 
+
 app.use((req, res, next) => {
   res.sendfFile(__dirname + '/public/index.html');
 });

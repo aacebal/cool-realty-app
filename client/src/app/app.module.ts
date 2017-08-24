@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 
 import { SessionService } from './services/session.service';
 import { YelpService } from './services/yelp.service';
-import { GoogleService } from './services/google.service';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -31,7 +30,7 @@ import { SinglePlaceComponent } from './single-place/single-place.component';
     BrowserModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [SessionService, YelpService, GoogleService],
+  providers: [SessionService, YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

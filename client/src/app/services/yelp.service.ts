@@ -22,4 +22,12 @@ export class YelpService {
     .then(res => res.json());
   }
 
+  getInfo(placeId) {
+    return this.http.get(`${this.BASE_URL}/api/get-info/${placeId}`,
+    { withCredentials: true }
+  )
+    .toPromise()
+    .then(res => res.json());
+  }
+
 }
